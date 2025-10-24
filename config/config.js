@@ -40,12 +40,12 @@ const config = {
     },
   },
   test: {
-    use_env_variable: 'DATABASE_URL',
-    username: process.env.DB_USER || 'your_local_db_user',
-    password: process.env.DB_PASSWORD || 'your_local_db_password',
-    database: process.env.DB_NAME_TEST || 'employee_db_test',
-    host: process.env.DB_HOST || '127.0.0.1',
+    username: process.env.DB_USER || 'postgres',
+    password: process.env.DB_PASSWORD || 'postgres',
+    database: process.env.DB_NAME || 'my_database_test',
+    host: process.env.DB_HOST || 'db',
     port: process.env.DB_PORT || 5432,
+    dialect: 'postgres',
     schema: 'public',
     dialectOptions: {
       ssl: false,

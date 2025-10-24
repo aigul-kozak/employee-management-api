@@ -1,7 +1,7 @@
 // swagger.js
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-const publicUrl = process.env.PUBLIC_URL || 'http://localhost:3000';
+const publicUrl = process.env.PUBLIC_URL || 'http://localhost:10000';
 
 const options = {
   definition: {
@@ -27,7 +27,16 @@ const options = {
       schemas: {
         Register: {
           type: 'object',
-          required: ['email', 'password', 'firstName', 'lastName', 'middleName', 'birthDate', 'phone', 'programmingLanguage'],
+          required: [
+            'email',
+            'password',
+            'firstName',
+            'lastName',
+            'middleName',
+            'birthDate',
+            'phone',
+            'programmingLanguage',
+          ],
           properties: {
             email: { type: 'string', format: 'email' },
             password: { type: 'string', format: 'password' },
@@ -38,7 +47,10 @@ const options = {
             phone: { type: 'string' },
             programmingLanguage: { type: 'string' },
             role: { type: 'string', enum: ['employee', 'admin'] },
-            secretWord: { type: 'string', description: 'Требуется только для регистрации администратора' },
+            secretWord: {
+              type: 'string',
+              description: 'Требуется только для регистрации администратора',
+            },
           },
         },
         Login: {
@@ -68,10 +80,10 @@ const options = {
             lastSalaryIncreaseDate: { type: 'string', format: 'date-time' },
             position: { type: 'string', nullable: true },
             mentorName: { type: 'string', nullable: true },
-            vacationDates: { 
+            vacationDates: {
               type: 'array',
               items: { type: 'string', format: 'date' },
-              nullable: true 
+              nullable: true,
             },
             githubLink: { type: 'string', format: 'uri', nullable: true },
             linkedinLink: { type: 'string', format: 'uri', nullable: true },
@@ -103,10 +115,10 @@ const options = {
             lastSalaryIncreaseDate: { type: 'string', format: 'date-time' },
             position: { type: 'string', nullable: true },
             mentorName: { type: 'string', nullable: true },
-            vacationDates: { 
+            vacationDates: {
               type: 'array',
               items: { type: 'string', format: 'date' },
-              nullable: true 
+              nullable: true,
             },
             githubLink: { type: 'string', format: 'uri', nullable: true },
             linkedinLink: { type: 'string', format: 'uri', nullable: true },
@@ -118,7 +130,16 @@ const options = {
         },
         UserCreate: {
           type: 'object',
-          required: ['email', 'password', 'firstName', 'lastName', 'middleName', 'birthDate', 'phone', 'programmingLanguage'],
+          required: [
+            'email',
+            'password',
+            'firstName',
+            'lastName',
+            'middleName',
+            'birthDate',
+            'phone',
+            'programmingLanguage',
+          ],
           properties: {
             email: { type: 'string', format: 'email' },
             password: { type: 'string', format: 'password' },
@@ -136,10 +157,10 @@ const options = {
             lastSalaryIncreaseDate: { type: 'string', format: 'date-time' },
             position: { type: 'string', nullable: true },
             mentorName: { type: 'string', nullable: true },
-            vacationDates: { 
+            vacationDates: {
               type: 'array',
               items: { type: 'string', format: 'date' },
-              nullable: true 
+              nullable: true,
             },
             githubLink: { type: 'string', format: 'uri', nullable: true },
             linkedinLink: { type: 'string', format: 'uri', nullable: true },
